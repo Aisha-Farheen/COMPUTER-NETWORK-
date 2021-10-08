@@ -1,0 +1,94 @@
+LINUX COMMANDS
+
+1.
+mkdir FISAT
+exam@debian:~$ cd FISAT
+exam@debian:~/FISAT$ mkdir Day1
+exam@debian:~/FISAT$ mkdir Day2
+exam@debian:~/FISAT$ mkdir Day3
+exam@debian:~/FISAT$ cd Day1
+exam@debian:~/FISAT/Day1$ cat >f1.txt
+Fisat f1 created in day1^Z
+[2]+  Stopped                 cat > f1.txt
+exam@debian:~/FISAT/Day1$ cat >f2.txt
+fisat f2 created in day2
+^Z
+[3]+  Stopped                 cat > f2.txt
+exam@debian:~/FISAT/Day1$ cat >f3.txt
+fisat f3 created in day1
+^Z
+[4]+  Stopped                 cat > f3.txt
+exam@debian:~/FISAT/Day1$ cd ..
+exam@debian:~/FISAT$ cd Day2
+exam@debian:~/FISAT/Day2$ cat >m1.txt
+fisat m1 created in day2
+^Z
+[5]+  Stopped                 cat > m1.txt
+exam@debian:~/FISAT/Day2$ cat >m2.txt
+fisat m2 created in day2
+^Z
+[6]+  Stopped                 cat > m2.txt
+exam@debian:~/FISAT/Day2$ cd ..
+exam@debian:~/FISAT$ cd Day3
+exam@debian:~/FISAT/Day3$ cat >c1.txt
+fisat c1 created in day3
+^Z
+[7]+  Stopped                 cat > c1.txt
+exam@debian:~/FISAT/Day3$ cat >c2.txt
+fisat c2 created in day3
+^Z
+[8]+  Stopped                 cat > c2.txt
+exam@debian:~/FISAT/Day3$ cd ..
+
+Q1.
+exam@debian:~/FISAT$ cd Day2
+exam@debian:~/FISAT/Day2$ cp -r m1.txt m2.txt
+exam@debian:~/FISAT/Day2$ cat m2.txt
+fisat m1 created in day2
+exam@debian:~/FISAT/Day2$ cat m1.txt
+fisat m1 created in day2
+exam@debian:~/FISAT/Day2$ mv m1.txt m2.txt
+exam@debian:~/FISAT/Day2$ cat m2.txt
+fisat m1 created in day2
+
+Q2.
+exam@debian:~/FISAT$ cd Day2
+exam@debian:~/FISAT/Day2$ cp -r m3.txt day3
+exam@debian:~/FISAT/Day2$ cd ..
+exam@debian:~/FISAT$ cd Day3
+exam@debian:~/FISAT/Day3$ ls -l
+total 8
+-rw-r--r-- 1 exam exam 25 Oct  8 09:55 c1.txt
+-rw-r--r-- 1 exam exam 25 Oct  8 09:56 c2.txt
+-rw-r--r-- 1 exam exam  0 Oct  8 10:58 c3.txt
+xam@debian:~/FISAT/Day3$ cat c3.txt
+fisat m3 created in Day2
+
+Q3.
+exam@debian:~/FISAT/Day1$ ls -l f1.txt
+--w------- 1 exam exam 0 Oct  8 09:52 f1.txt
+exam@debian:~/FISAT/Day1$ chmod a+r f1.txt
+exam@debian:~/FISAT/Day1$ ls -l f1.txt
+-rw-r--r-- 1 exam exam 0 Oct  8 09:52 f1.txt
+$ chmod a+wr f1.txt
+exam@debian:~/FISAT/Day1$ ls -l f1.txt
+-rw-rw-rw- 1 exam exam 0 Oct  8 09:52 f1.txt
+
+Q4.
+exam@debian:~/FISAT/Day1$ ps
+    PID TTY          TIME CMD
+   3126 pts/0    00:00:00 bash
+   3298 pts/0    00:00:00 cat
+   3333 pts/0    00:00:00 cat
+   3364 pts/0    00:00:00 cat
+   3365 pts/0    00:00:00 cat
+   3397 pts/0    00:00:00 cat
+   3403 pts/0    00:00:00 cat
+   3433 pts/0    00:00:00 cat
+   3438 pts/0    00:00:00 cat
+   3958 pts/0    00:00:00 ps
+
+Q5. 
+exam@debian:~/FISAT/Day1$ pwd
+/home/exam/FISAT/Day1
+
